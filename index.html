@@ -11,121 +11,56 @@
     
     <!-- Premium CSS Variables -->
     <style>
-        /* Modern font with excellent readability */
         body { font-family: 'Plus Jakarta Sans', sans-serif; }
 
-        /* 1. Light Theme (Clean & Airy) */
         :root {
-            --bg-main: #f3f4f6;
-            --bg-surface: rgba(255, 255, 255, 0.85);
-            --bg-hover: #f3f4f6;
-            --border-color: rgba(229, 231, 235, 0.5);
-            --text-main: #111827;
-            --text-muted: #6b7280;
-            --color-primary: #4f46e5;
-            --color-primary-hover: #4338ca;
-            --color-primary-light: rgba(79, 70, 229, 0.08);
+            --bg-main: #f3f4f6; --bg-surface: rgba(255, 255, 255, 0.85); --bg-hover: #f3f4f6;
+            --border-color: rgba(229, 231, 235, 0.5); --text-main: #111827; --text-muted: #6b7280;
+            --color-primary: #4f46e5; --color-primary-hover: #4338ca; --color-primary-light: rgba(79, 70, 229, 0.08);
             --shadow-glass: 0 8px 32px 0 rgba(31, 38, 135, 0.07);
         }
 
-        /* 2. Dark Theme (Sleek Obsidian) */
         [data-theme="dark"] {
-            --bg-main: #09090b;
-            --bg-surface: rgba(24, 24, 27, 0.7);
-            --bg-hover: rgba(39, 39, 42, 0.8);
-            --border-color: rgba(63, 63, 70, 0.4);
-            --text-main: #f8fafc;
-            --text-muted: #a1a1aa;
-            --color-primary: #6366f1;
-            --color-primary-hover: #818cf8;
-            --color-primary-light: rgba(99, 102, 241, 0.15);
+            --bg-main: #09090b; --bg-surface: rgba(24, 24, 27, 0.7); --bg-hover: rgba(39, 39, 42, 0.8);
+            --border-color: rgba(63, 63, 70, 0.4); --text-main: #f8fafc; --text-muted: #a1a1aa;
+            --color-primary: #6366f1; --color-primary-hover: #818cf8; --color-primary-light: rgba(99, 102, 241, 0.15);
             --shadow-glass: 0 8px 32px 0 rgba(0, 0, 0, 0.4);
         }
 
-        /* 3. Midnight Theme (Deep Blue/Cyan) */
         [data-theme="midnight"] {
-            --bg-main: #020617;
-            --bg-surface: rgba(15, 23, 42, 0.75);
-            --bg-hover: rgba(30, 41, 59, 0.8);
-            --border-color: rgba(51, 65, 85, 0.5);
-            --text-main: #f0f9ff;
-            --text-muted: #7dd3fc;
-            --color-primary: #06b6d4; 
-            --color-primary-hover: #22d3ee; 
-            --color-primary-light: rgba(6, 182, 212, 0.15);
+            --bg-main: #020617; --bg-surface: rgba(15, 23, 42, 0.75); --bg-hover: rgba(30, 41, 59, 0.8);
+            --border-color: rgba(51, 65, 85, 0.5); --text-main: #f0f9ff; --text-muted: #7dd3fc;
+            --color-primary: #06b6d4; --color-primary-hover: #22d3ee; --color-primary-light: rgba(6, 182, 212, 0.15);
             --shadow-glass: 0 8px 32px 0 rgba(0, 0, 0, 0.5);
         }
 
-        /* 4. Matcha Theme (Soft Sage) */
         [data-theme="matcha"] {
-            --bg-main: #f1f4f0;
-            --bg-surface: rgba(255, 255, 255, 0.8);
-            --bg-hover: #e5e9e4;
-            --border-color: rgba(206, 212, 203, 0.6);
-            --text-main: #273029;
-            --text-muted: #5e6c61;
-            --color-primary: #15803d; 
-            --color-primary-hover: #16a34a; 
-            --color-primary-light: rgba(21, 128, 61, 0.08);
+            --bg-main: #f1f4f0; --bg-surface: rgba(255, 255, 255, 0.8); --bg-hover: #e5e9e4;
+            --border-color: rgba(206, 212, 203, 0.6); --text-main: #273029; --text-muted: #5e6c61;
+            --color-primary: #15803d; --color-primary-hover: #16a34a; --color-primary-light: rgba(21, 128, 61, 0.08);
             --shadow-glass: 0 8px 32px 0 rgba(21, 128, 61, 0.05);
         }
 
-        /* Base Utilities & Animations */
         .glass-panel {
-            background: var(--bg-surface);
-            backdrop-filter: blur(16px);
-            -webkit-backdrop-filter: blur(16px);
-            border: 1px solid var(--border-color);
-            box-shadow: var(--shadow-glass);
+            background: var(--bg-surface); backdrop-filter: blur(16px); -webkit-backdrop-filter: blur(16px);
+            border: 1px solid var(--border-color); box-shadow: var(--shadow-glass);
         }
-
-        .drag-over { 
-            border-color: var(--color-primary) !important; 
-            background-color: var(--color-primary-light) !important; 
-            transform: scale(1.02);
-        }
-
-        .tool-active { 
-            background-color: var(--color-primary-light); 
-            color: var(--color-primary); 
-            font-weight: 600; 
-        }
-        .tool-active::before {
-            content: ''; position: absolute; left: 0; top: 10%; height: 80%; width: 4px;
-            background-color: var(--color-primary); border-radius: 0 4px 4px 0;
-        }
-
-        /* Custom Scrollbar */
+        .drag-over { border-color: var(--color-primary) !important; background-color: var(--color-primary-light) !important; transform: scale(1.02); }
+        .tool-active { background-color: var(--color-primary-light); color: var(--color-primary); font-weight: 600; }
+        .tool-active::before { content: ''; position: absolute; left: 0; top: 10%; height: 80%; width: 4px; background-color: var(--color-primary); border-radius: 0 4px 4px 0; }
         ::-webkit-scrollbar { width: 6px; }
         ::-webkit-scrollbar-track { background: transparent; }
         ::-webkit-scrollbar-thumb { background: var(--border-color); border-radius: 10px; }
         ::-webkit-scrollbar-thumb:hover { background: var(--text-muted); }
-        
-        /* Smooth state transitions */
         .fade-enter { opacity: 0; transform: translateY(10px); }
         .fade-enter-active { opacity: 1; transform: translateY(0); transition: opacity 400ms, transform 400ms cubic-bezier(0.4, 0, 0.2, 1); }
     </style>
 
-    <!-- Tailwind CSS connected to Custom CSS Variables -->
     <script src="https://cdn.tailwindcss.com"></script>
     <script>
-        tailwind.config = { 
-            theme: { 
-                extend: { 
-                    fontFamily: { sans: ['Plus Jakarta Sans', 'sans-serif'] }, 
-                    colors: { 
-                        theme: {
-                            bg: 'var(--bg-main)', surface: 'var(--bg-surface)', hover: 'var(--bg-hover)',
-                            border: 'var(--border-color)', text: 'var(--text-main)', muted: 'var(--text-muted)',
-                            primary: 'var(--color-primary)', primaryHover: 'var(--color-primary-hover)'
-                        }
-                    } 
-                } 
-            } 
-        }
+        tailwind.config = { theme: { extend: { fontFamily: { sans: ['Plus Jakarta Sans', 'sans-serif'] }, colors: { theme: { bg: 'var(--bg-main)', surface: 'var(--bg-surface)', hover: 'var(--bg-hover)', border: 'var(--border-color)', text: 'var(--text-main)', muted: 'var(--text-muted)', primary: 'var(--color-primary)', primaryHover: 'var(--color-primary-hover)' } } } } }
     </script>
     
-    <!-- PDF Libraries -->
     <script src="https://unpkg.com/pdf-lib@1.17.1/dist/pdf-lib.min.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/pdf.js/3.11.174/pdf.min.js"></script>
     <script>pdfjsLib.GlobalWorkerOptions.workerSrc = 'https://cdnjs.cloudflare.com/ajax/libs/pdf.js/3.11.174/pdf.worker.min.js';</script>
@@ -133,33 +68,29 @@
 </head>
 <body class="flex h-screen overflow-hidden antialiased text-theme-text bg-theme-bg transition-colors duration-500">
 
-    <!-- Mobile Header (Visible only on small screens) -->
     <div class="md:hidden glass-panel fixed top-0 w-full z-40 px-4 py-3 flex items-center justify-between border-b border-theme-border">
         <div class="flex items-center gap-2">
             <div class="bg-gradient-to-br from-theme-primary to-theme-primaryHover text-white p-1.5 rounded-lg shadow-md"><i data-lucide="layers" class="w-5 h-5"></i></div>
             <h1 class="text-xl font-bold tracking-tight text-theme-text">PDFZone</h1>
         </div>
-        <button id="mobile-menu-btn" class="p-2 bg-theme-hover rounded-lg text-theme-text hover:text-theme-primary transition-colors focus:outline-none">
-            <i data-lucide="menu"></i>
-        </button>
+        <button id="mobile-menu-btn" class="p-2 bg-theme-hover rounded-lg text-theme-text hover:text-theme-primary transition-colors"><i data-lucide="menu"></i></button>
     </div>
-
-    <!-- Mobile Overlay Backdrop -->
     <div id="sidebar-overlay" class="fixed inset-0 bg-black/40 backdrop-blur-sm z-40 hidden opacity-0 transition-opacity duration-300 md:hidden"></div>
 
-    <!-- Sidebar Navigation (Responsive Drawer) -->
+    <!-- Sidebar Navigation -->
     <aside id="sidebar" class="glass-panel border-r border-theme-border flex flex-col z-50 fixed inset-y-0 left-0 w-72 transform -translate-x-full md:relative md:translate-x-0 transition-transform duration-300 ease-in-out">
-        
-        <!-- Desktop Logo Area -->
         <div class="hidden md:flex p-6 items-center gap-3 border-b border-theme-border">
             <div class="bg-gradient-to-br from-theme-primary to-theme-primaryHover text-white p-2 rounded-xl shadow-lg shadow-theme-primary/30"><i data-lucide="layers" class="w-6 h-6"></i></div>
-            <h1 class="text-2xl font-extrabold tracking-tight text-transparent bg-clip-text bg-gradient-to-r from-theme-text to-theme-muted">PDFZone</h1>
+            <h1 class="text-2xl font-extrabold tracking-tight text-transparent bg-clip-text bg-gradient-to-r from-theme-text to-theme-muted cursor-pointer" onclick="switchTab('home')">PDFZone</h1>
         </div>
         
-        <!-- Navigation Links -->
         <nav class="flex-1 flex flex-col gap-1.5 px-4 py-6 overflow-y-auto" id="tool-nav">
+            <button onclick="switchTab('home')" id="tab-home" class="tool-active relative flex items-center gap-3 px-4 py-3 rounded-xl text-theme-text hover:bg-theme-hover transition-all w-full text-left text-sm font-medium mb-4">
+                <i data-lucide="layout-grid" class="w-5 h-5 opacity-80"></i> Dashboard
+            </button>
+
             <p class="text-[11px] font-bold text-theme-muted uppercase tracking-widest mb-2 px-2">Organize & Edit</p>
-            <button onclick="switchTab('merge')" id="tab-merge" class="tool-active relative flex items-center gap-3 px-4 py-3 rounded-xl text-theme-text hover:bg-theme-hover transition-all w-full text-left text-sm font-medium">
+            <button onclick="switchTab('merge')" id="tab-merge" class="relative flex items-center gap-3 px-4 py-3 rounded-xl text-theme-text hover:bg-theme-hover transition-all w-full text-left text-sm font-medium">
                 <i data-lucide="copy-plus" class="w-5 h-5 opacity-80"></i> Merge PDFs
             </button>
             <button onclick="switchTab('split')" id="tab-split" class="relative flex items-center gap-3 px-4 py-3 rounded-xl text-theme-text hover:bg-theme-hover transition-all w-full text-left text-sm font-medium">
@@ -183,7 +114,6 @@
             </button>
         </nav>
 
-        <!-- Theme Selection -->
         <div class="p-6 border-t border-theme-border bg-theme-surface/50">
             <label for="theme-select" class="block text-[11px] font-bold text-theme-muted uppercase tracking-widest mb-3">Workspace Theme</label>
             <div class="relative">
@@ -203,126 +133,121 @@
     <!-- Main Content Area -->
     <main class="flex-1 overflow-y-auto relative scroll-smooth pt-16 md:pt-0">
         
-        <!-- Decorative Background Elements -->
         <div class="absolute top-[-10%] left-[-10%] w-[40%] h-[40%] rounded-full bg-theme-primary opacity-10 blur-3xl pointer-events-none"></div>
         <div class="absolute bottom-[10%] right-[-5%] w-[30%] h-[30%] rounded-full bg-theme-primaryHover opacity-10 blur-3xl pointer-events-none"></div>
 
-        <div id="tools-container" class="max-w-4xl mx-auto w-full p-4 sm:p-8 md:p-12 relative z-10">
+        <div id="tools-container" class="max-w-6xl mx-auto w-full p-4 sm:p-8 md:p-12 relative z-10">
             
-            <!-- TOOL 1: MERGE -->
-            <section id="view-merge" class="tool-view fade-enter fade-enter-active">
-                <div class="mb-10 text-center md:text-left">
-                    <h2 class="text-3xl md:text-4xl font-extrabold text-theme-text mb-3 tracking-tight">Merge PDFs</h2>
-                    <p class="text-theme-muted text-lg">Combine multiple PDFs into a single file instantly. 100% secure.</p>
+            <!-- HOME / DASHBOARD VIEW -->
+            <section id="view-home" class="tool-view fade-enter fade-enter-active">
+                <div class="mb-12 text-center md:text-left">
+                    <h2 class="text-4xl md:text-5xl font-extrabold text-theme-text mb-4 tracking-tight">Welcome to PDFZone v5.0</h2>
+                    <p class="text-theme-muted text-xl max-w-2xl">Your 100% private, client-side PDF toolkit. Files never leave your device. Select a tool below to get started.</p>
                 </div>
-                
-                <div id="merge-drop-zone" class="glass-panel border-2 border-dashed border-theme-border rounded-3xl p-12 md:p-20 text-center cursor-pointer hover:border-theme-primary hover:bg-theme-surface transition-all duration-300 group shadow-sm hover:shadow-lg">
-                    <div class="w-20 h-20 mx-auto bg-theme-hover rounded-2xl flex items-center justify-center mb-6 group-hover:scale-110 group-hover:bg-theme-primary-light transition-all duration-300">
-                        <i data-lucide="upload-cloud" class="w-10 h-10 text-theme-primary"></i>
+
+                <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+                    
+                    <!-- App Card: Merge -->
+                    <div onclick="switchTab('merge')" class="glass-panel p-8 rounded-3xl cursor-pointer border-2 border-transparent hover:border-theme-primary transition-all duration-300 group hover:shadow-xl hover:-translate-y-1">
+                        <div class="w-14 h-14 bg-theme-primary-light rounded-2xl flex items-center justify-center mb-6 group-hover:scale-110 transition-transform duration-300">
+                            <i data-lucide="copy-plus" class="w-7 h-7 text-theme-primary"></i>
+                        </div>
+                        <h3 class="text-xl font-extrabold text-theme-text mb-2">Merge PDFs</h3>
+                        <p class="text-theme-muted leading-relaxed">Combine multiple PDF documents into a single, cohesive file in seconds.</p>
                     </div>
-                    <h3 class="text-xl font-bold text-theme-text mb-2">Drag & drop files here</h3>
-                    <p class="text-theme-muted text-sm">or click to browse from your device</p>
-                    <input type="file" id="merge-input" accept="application/pdf" multiple class="hidden" />
+
+                    <!-- App Card: Split -->
+                    <div onclick="switchTab('split')" class="glass-panel p-8 rounded-3xl cursor-pointer border-2 border-transparent hover:border-theme-primary transition-all duration-300 group hover:shadow-xl hover:-translate-y-1">
+                        <div class="w-14 h-14 bg-theme-primary-light rounded-2xl flex items-center justify-center mb-6 group-hover:scale-110 transition-transform duration-300">
+                            <i data-lucide="split-square-horizontal" class="w-7 h-7 text-theme-primary"></i>
+                        </div>
+                        <h3 class="text-xl font-extrabold text-theme-text mb-2">Split to Pages</h3>
+                        <p class="text-theme-muted leading-relaxed">Burst a multi-page document into individual 1-page PDF files packaged in a ZIP.</p>
+                    </div>
+
+                    <!-- App Card: Extract -->
+                    <div onclick="switchTab('extract')" class="glass-panel p-8 rounded-3xl cursor-pointer border-2 border-transparent hover:border-theme-primary transition-all duration-300 group hover:shadow-xl hover:-translate-y-1">
+                        <div class="w-14 h-14 bg-theme-primary-light rounded-2xl flex items-center justify-center mb-6 group-hover:scale-110 transition-transform duration-300">
+                            <i data-lucide="scissors" class="w-7 h-7 text-theme-primary"></i>
+                        </div>
+                        <h3 class="text-xl font-extrabold text-theme-text mb-2">Extract Pages</h3>
+                        <p class="text-theme-muted leading-relaxed">Select specific pages from a large document and save them as a new, smaller PDF.</p>
+                    </div>
+
+                    <!-- App Card: Image to PDF -->
+                    <div onclick="switchTab('img2pdf')" class="glass-panel p-8 rounded-3xl cursor-pointer border-2 border-transparent hover:border-theme-primary transition-all duration-300 group hover:shadow-xl hover:-translate-y-1">
+                        <div class="w-14 h-14 bg-theme-primary-light rounded-2xl flex items-center justify-center mb-6 group-hover:scale-110 transition-transform duration-300">
+                            <i data-lucide="image" class="w-7 h-7 text-theme-primary"></i>
+                        </div>
+                        <h3 class="text-xl font-extrabold text-theme-text mb-2">Image to PDF</h3>
+                        <p class="text-theme-muted leading-relaxed">Convert your JPG and PNG image files into a structured PDF document.</p>
+                    </div>
+
+                    <!-- App Card: Flatten -->
+                    <div onclick="switchTab('flatten')" class="glass-panel p-8 rounded-3xl cursor-pointer border-2 border-transparent hover:border-theme-primary transition-all duration-300 group hover:shadow-xl hover:-translate-y-1">
+                        <div class="w-14 h-14 bg-theme-primary-light rounded-2xl flex items-center justify-center mb-6 group-hover:scale-110 transition-transform duration-300">
+                            <i data-lucide="file-lock-2" class="w-7 h-7 text-theme-primary"></i>
+                        </div>
+                        <h3 class="text-xl font-extrabold text-theme-text mb-2">Flatten Form</h3>
+                        <p class="text-theme-muted leading-relaxed">Lock interactive, fillable PDF forms into read-only documents to prevent editing.</p>
+                    </div>
+
+                    <!-- App Card: Metadata -->
+                    <div onclick="switchTab('metadata')" class="glass-panel p-8 rounded-3xl cursor-pointer border-2 border-transparent hover:border-theme-primary transition-all duration-300 group hover:shadow-xl hover:-translate-y-1">
+                        <div class="w-14 h-14 bg-theme-primary-light rounded-2xl flex items-center justify-center mb-6 group-hover:scale-110 transition-transform duration-300">
+                            <i data-lucide="tags" class="w-7 h-7 text-theme-primary"></i>
+                        </div>
+                        <h3 class="text-xl font-extrabold text-theme-text mb-2">Edit Metadata</h3>
+                        <p class="text-theme-muted leading-relaxed">Modify the hidden SEO properties of your PDF, including Title, Author, and Keywords.</p>
+                    </div>
+
                 </div>
-                
+            </section>
+
+            <!-- ALL OTHER TOOLS (Hidden by default) -->
+
+            <section id="view-merge" class="hidden tool-view">
+                <div class="mb-10 text-center md:text-left"><h2 class="text-3xl md:text-4xl font-extrabold text-theme-text mb-3 tracking-tight">Merge PDFs</h2><p class="text-theme-muted text-lg">Combine multiple PDFs into a single file instantly. 100% secure.</p></div>
+                <div id="merge-drop-zone" class="glass-panel border-2 border-dashed border-theme-border rounded-3xl p-12 md:p-20 text-center cursor-pointer hover:border-theme-primary transition-all group shadow-sm hover:shadow-lg"><div class="w-20 h-20 mx-auto bg-theme-hover rounded-2xl flex items-center justify-center mb-6 group-hover:scale-110 group-hover:bg-theme-primary-light transition-all"><i data-lucide="upload-cloud" class="w-10 h-10 text-theme-primary"></i></div><h3 class="text-xl font-bold text-theme-text mb-2">Drag & drop files here</h3><p class="text-theme-muted text-sm">or click to browse from your device</p><input type="file" id="merge-input" accept="application/pdf" multiple class="hidden" /></div>
                 <ul id="merge-file-list" class="mt-6 space-y-3"></ul>
-                
-                <div class="mt-8 flex flex-col sm:flex-row items-center gap-4 justify-between">
-                    <button id="btn-merge" class="w-full sm:w-auto px-8 py-4 bg-gradient-to-r from-theme-primary to-theme-primaryHover text-white rounded-xl font-bold shadow-lg shadow-theme-primary/20 hover:shadow-theme-primary/40 transform hover:-translate-y-0.5 active:scale-95 disabled:opacity-50 disabled:pointer-events-none transition-all duration-200" disabled>
-                        Merge Files
-                    </button>
-                    <a id="merge-download" class="w-full sm:w-auto hidden px-8 py-4 bg-theme-text text-theme-bg rounded-xl font-bold flex items-center justify-center gap-2 shadow-lg transform hover:-translate-y-0.5 active:scale-95 transition-all duration-200">
-                        <i data-lucide="download" class="w-5 h-5"></i> Save Result
-                    </a>
-                </div>
+                <div class="mt-8 flex flex-col sm:flex-row items-center gap-4 justify-between"><button id="btn-merge" class="w-full sm:w-auto px-8 py-4 bg-gradient-to-r from-theme-primary to-theme-primaryHover text-white rounded-xl font-bold shadow-lg shadow-theme-primary/20 hover:-translate-y-0.5 disabled:opacity-50 transition-all" disabled>Merge Files</button><a id="merge-download" class="w-full sm:w-auto hidden px-8 py-4 bg-theme-text text-theme-bg rounded-xl font-bold flex items-center justify-center gap-2 shadow-lg hover:-translate-y-0.5 transition-all"><i data-lucide="download" class="w-5 h-5"></i> Save Result</a></div>
             </section>
 
-            <!-- TOOL 2: SPLIT -->
             <section id="view-split" class="hidden tool-view">
-                <div class="mb-10 text-center md:text-left">
-                    <h2 class="text-3xl md:text-4xl font-extrabold text-theme-text mb-3 tracking-tight">Split PDF</h2>
-                    <p class="text-theme-muted text-lg">Burst a multi-page PDF into individual 1-page files.</p>
-                </div>
-                <div id="split-drop-zone" class="glass-panel border-2 border-dashed border-theme-border rounded-3xl p-12 md:p-20 text-center cursor-pointer hover:border-theme-primary transition-all duration-300 group shadow-sm hover:shadow-lg">
-                    <div class="w-20 h-20 mx-auto bg-theme-hover rounded-2xl flex items-center justify-center mb-6 group-hover:scale-110 group-hover:bg-theme-primary-light transition-all duration-300">
-                        <i data-lucide="split-square-horizontal" class="w-10 h-10 text-theme-primary"></i>
-                    </div>
-                    <h3 class="text-xl font-bold text-theme-text mb-2">Drop a PDF to Split</h3>
-                    <input type="file" id="split-input" accept="application/pdf" class="hidden" />
-                </div>
-                <div class="mt-8 flex flex-col sm:flex-row items-center gap-4 justify-between">
-                    <button id="btn-split" class="hidden w-full sm:w-auto px-8 py-4 bg-gradient-to-r from-theme-primary to-theme-primaryHover text-white rounded-xl font-bold shadow-lg shadow-theme-primary/20 hover:-translate-y-0.5 transition-all">Split & ZIP</button>
-                    <a id="split-download" class="hidden w-full sm:w-auto px-8 py-4 bg-theme-text text-theme-bg rounded-xl font-bold flex items-center justify-center gap-2 shadow-lg hover:-translate-y-0.5 transition-all"><i data-lucide="download" class="w-5 h-5"></i> Download ZIP</a>
-                    <p id="split-status" class="text-sm font-semibold text-theme-primary"></p>
-                </div>
+                <div class="mb-10 text-center md:text-left"><h2 class="text-3xl md:text-4xl font-extrabold text-theme-text mb-3 tracking-tight">Split PDF</h2><p class="text-theme-muted text-lg">Burst a multi-page PDF into individual 1-page files.</p></div>
+                <div id="split-drop-zone" class="glass-panel border-2 border-dashed border-theme-border rounded-3xl p-12 md:p-20 text-center cursor-pointer hover:border-theme-primary transition-all group shadow-sm hover:shadow-lg"><div class="w-20 h-20 mx-auto bg-theme-hover rounded-2xl flex items-center justify-center mb-6 group-hover:scale-110 group-hover:bg-theme-primary-light transition-all"><i data-lucide="split-square-horizontal" class="w-10 h-10 text-theme-primary"></i></div><h3 class="text-xl font-bold text-theme-text mb-2">Drop a PDF to Split</h3><input type="file" id="split-input" accept="application/pdf" class="hidden" /></div>
+                <div class="mt-8 flex flex-col sm:flex-row items-center gap-4 justify-between"><button id="btn-split" class="hidden w-full sm:w-auto px-8 py-4 bg-gradient-to-r from-theme-primary to-theme-primaryHover text-white rounded-xl font-bold shadow-lg shadow-theme-primary/20 hover:-translate-y-0.5 transition-all">Split & ZIP</button><a id="split-download" class="hidden w-full sm:w-auto px-8 py-4 bg-theme-text text-theme-bg rounded-xl font-bold flex items-center justify-center gap-2 shadow-lg hover:-translate-y-0.5 transition-all"><i data-lucide="download" class="w-5 h-5"></i> Download ZIP</a><p id="split-status" class="text-sm font-semibold text-theme-primary"></p></div>
             </section>
 
-            <!-- TOOL 3: IMAGE TO PDF -->
             <section id="view-img2pdf" class="hidden tool-view">
-                <div class="mb-10 text-center md:text-left">
-                    <h2 class="text-3xl md:text-4xl font-extrabold text-theme-text mb-3 tracking-tight">Image to PDF</h2>
-                    <p class="text-theme-muted text-lg">Convert multiple JPGs and PNGs into a single PDF document.</p>
-                </div>
-                <div id="img2pdf-drop-zone" class="glass-panel border-2 border-dashed border-theme-border rounded-3xl p-12 md:p-20 text-center cursor-pointer hover:border-theme-primary transition-all duration-300 group shadow-sm hover:shadow-lg">
-                    <div class="w-20 h-20 mx-auto bg-theme-hover rounded-2xl flex items-center justify-center mb-6 group-hover:scale-110 group-hover:bg-theme-primary-light transition-all duration-300">
-                        <i data-lucide="image" class="w-10 h-10 text-theme-primary"></i>
-                    </div>
-                    <h3 class="text-xl font-bold text-theme-text mb-2">Drop images here</h3>
-                    <input type="file" id="img2pdf-input" accept="image/png, image/jpeg" multiple class="hidden" />
-                </div>
+                <div class="mb-10 text-center md:text-left"><h2 class="text-3xl md:text-4xl font-extrabold text-theme-text mb-3 tracking-tight">Image to PDF</h2><p class="text-theme-muted text-lg">Convert multiple JPGs and PNGs into a single PDF document.</p></div>
+                <div id="img2pdf-drop-zone" class="glass-panel border-2 border-dashed border-theme-border rounded-3xl p-12 md:p-20 text-center cursor-pointer hover:border-theme-primary transition-all group shadow-sm hover:shadow-lg"><div class="w-20 h-20 mx-auto bg-theme-hover rounded-2xl flex items-center justify-center mb-6 group-hover:scale-110 group-hover:bg-theme-primary-light transition-all"><i data-lucide="image" class="w-10 h-10 text-theme-primary"></i></div><h3 class="text-xl font-bold text-theme-text mb-2">Drop images here</h3><input type="file" id="img2pdf-input" accept="image/png, image/jpeg" multiple class="hidden" /></div>
                 <ul id="img2pdf-file-list" class="mt-6 space-y-3"></ul>
-                <div class="mt-8 flex flex-col sm:flex-row items-center gap-4 justify-between">
-                    <button id="btn-img2pdf" class="w-full sm:w-auto px-8 py-4 bg-gradient-to-r from-theme-primary to-theme-primaryHover text-white rounded-xl font-bold shadow-lg shadow-theme-primary/20 hover:-translate-y-0.5 disabled:opacity-50 transition-all" disabled>Convert to PDF</button>
-                    <a id="img2pdf-download" class="hidden w-full sm:w-auto px-8 py-4 bg-theme-text text-theme-bg rounded-xl font-bold flex items-center justify-center gap-2 shadow-lg hover:-translate-y-0.5 transition-all"><i data-lucide="download"></i> Save PDF</a>
-                </div>
+                <div class="mt-8 flex flex-col sm:flex-row items-center gap-4 justify-between"><button id="btn-img2pdf" class="w-full sm:w-auto px-8 py-4 bg-gradient-to-r from-theme-primary to-theme-primaryHover text-white rounded-xl font-bold shadow-lg shadow-theme-primary/20 hover:-translate-y-0.5 disabled:opacity-50 transition-all" disabled>Convert to PDF</button><a id="img2pdf-download" class="hidden w-full sm:w-auto px-8 py-4 bg-theme-text text-theme-bg rounded-xl font-bold flex items-center justify-center gap-2 shadow-lg hover:-translate-y-0.5 transition-all"><i data-lucide="download"></i> Save PDF</a></div>
             </section>
 
-            <!-- TOOL 4: METADATA EDITOR -->
             <section id="view-metadata" class="hidden tool-view">
-                <div class="mb-10 text-center md:text-left">
-                    <h2 class="text-3xl md:text-4xl font-extrabold text-theme-text mb-3 tracking-tight">Edit Metadata</h2>
-                    <p class="text-theme-muted text-lg">Optimize your PDF's hidden properties for SEO and search.</p>
-                </div>
-                <div id="metadata-drop-zone" class="glass-panel border-2 border-dashed border-theme-border rounded-3xl p-12 md:p-20 text-center cursor-pointer hover:border-theme-primary transition-all duration-300 group shadow-sm hover:shadow-lg">
-                    <div class="w-20 h-20 mx-auto bg-theme-hover rounded-2xl flex items-center justify-center mb-6 group-hover:scale-110 group-hover:bg-theme-primary-light transition-all duration-300">
-                        <i data-lucide="tags" class="w-10 h-10 text-theme-primary"></i>
-                    </div>
-                    <h3 class="text-xl font-bold text-theme-text mb-2">Drop PDF to Edit Data</h3>
-                    <input type="file" id="metadata-input" accept="application/pdf" class="hidden" />
-                </div>
+                <div class="mb-10 text-center md:text-left"><h2 class="text-3xl md:text-4xl font-extrabold text-theme-text mb-3 tracking-tight">Edit Metadata</h2><p class="text-theme-muted text-lg">Optimize your PDF's hidden properties for SEO and search.</p></div>
+                <div id="metadata-drop-zone" class="glass-panel border-2 border-dashed border-theme-border rounded-3xl p-12 md:p-20 text-center cursor-pointer hover:border-theme-primary transition-all group shadow-sm hover:shadow-lg"><div class="w-20 h-20 mx-auto bg-theme-hover rounded-2xl flex items-center justify-center mb-6 group-hover:scale-110 group-hover:bg-theme-primary-light transition-all"><i data-lucide="tags" class="w-10 h-10 text-theme-primary"></i></div><h3 class="text-xl font-bold text-theme-text mb-2">Drop PDF to Edit Data</h3><input type="file" id="metadata-input" accept="application/pdf" class="hidden" /></div>
                 <div id="metadata-workspace" class="hidden mt-8 glass-panel p-6 md:p-8 rounded-3xl grid grid-cols-1 sm:grid-cols-2 gap-6">
-                    <div><label class="block text-sm font-bold mb-2 text-theme-text">Title</label><input type="text" id="meta-title" class="w-full bg-theme-bg border-2 border-theme-border text-theme-text rounded-xl px-4 py-3 focus:outline-none focus:border-theme-primary transition-colors"></div>
-                    <div><label class="block text-sm font-bold mb-2 text-theme-text">Author</label><input type="text" id="meta-author" class="w-full bg-theme-bg border-2 border-theme-border text-theme-text rounded-xl px-4 py-3 focus:outline-none focus:border-theme-primary transition-colors"></div>
-                    <div><label class="block text-sm font-bold mb-2 text-theme-text">Subject</label><input type="text" id="meta-subject" class="w-full bg-theme-bg border-2 border-theme-border text-theme-text rounded-xl px-4 py-3 focus:outline-none focus:border-theme-primary transition-colors"></div>
-                    <div><label class="block text-sm font-bold mb-2 text-theme-text">Keywords</label><input type="text" id="meta-keywords" class="w-full bg-theme-bg border-2 border-theme-border text-theme-text rounded-xl px-4 py-3 focus:outline-none focus:border-theme-primary transition-colors"></div>
+                    <div><label class="block text-sm font-bold mb-2 text-theme-text">Title</label><input type="text" id="meta-title" class="w-full bg-theme-bg border-2 border-theme-border text-theme-text rounded-xl px-4 py-3 focus:outline-none focus:border-theme-primary"></div>
+                    <div><label class="block text-sm font-bold mb-2 text-theme-text">Author</label><input type="text" id="meta-author" class="w-full bg-theme-bg border-2 border-theme-border text-theme-text rounded-xl px-4 py-3 focus:outline-none focus:border-theme-primary"></div>
+                    <div><label class="block text-sm font-bold mb-2 text-theme-text">Subject</label><input type="text" id="meta-subject" class="w-full bg-theme-bg border-2 border-theme-border text-theme-text rounded-xl px-4 py-3 focus:outline-none focus:border-theme-primary"></div>
+                    <div><label class="block text-sm font-bold mb-2 text-theme-text">Keywords</label><input type="text" id="meta-keywords" class="w-full bg-theme-bg border-2 border-theme-border text-theme-text rounded-xl px-4 py-3 focus:outline-none focus:border-theme-primary"></div>
                 </div>
-                <div class="mt-8 flex flex-col sm:flex-row items-center gap-4 justify-between">
-                    <button id="btn-metadata" class="hidden w-full sm:w-auto px-8 py-4 bg-gradient-to-r from-theme-primary to-theme-primaryHover text-white rounded-xl font-bold shadow-lg shadow-theme-primary/20 hover:-translate-y-0.5 transition-all">Save Properties</button>
-                    <a id="metadata-download" class="hidden w-full sm:w-auto px-8 py-4 bg-theme-text text-theme-bg rounded-xl font-bold flex items-center justify-center gap-2 shadow-lg hover:-translate-y-0.5 transition-all"><i data-lucide="download"></i> Save PDF</a>
-                </div>
+                <div class="mt-8 flex flex-col sm:flex-row items-center gap-4 justify-between"><button id="btn-metadata" class="hidden w-full sm:w-auto px-8 py-4 bg-gradient-to-r from-theme-primary to-theme-primaryHover text-white rounded-xl font-bold shadow-lg shadow-theme-primary/20 hover:-translate-y-0.5 transition-all">Save Properties</button><a id="metadata-download" class="hidden w-full sm:w-auto px-8 py-4 bg-theme-text text-theme-bg rounded-xl font-bold flex items-center justify-center gap-2 shadow-lg hover:-translate-y-0.5 transition-all"><i data-lucide="download"></i> Save PDF</a></div>
             </section>
             
-            <!-- TOOL 5: FLATTEN -->
             <section id="view-flatten" class="hidden tool-view">
-                <div class="mb-10 text-center md:text-left">
-                    <h2 class="text-3xl md:text-4xl font-extrabold text-theme-text mb-3 tracking-tight">Flatten Form</h2>
-                    <p class="text-theme-muted text-lg">Lock interactive PDF forms into read-only documents.</p>
-                </div>
-                <div id="flatten-drop-zone" class="glass-panel border-2 border-dashed border-theme-border rounded-3xl p-12 md:p-20 text-center cursor-pointer hover:border-theme-primary transition-all duration-300 group shadow-sm hover:shadow-lg">
-                    <div class="w-20 h-20 mx-auto bg-theme-hover rounded-2xl flex items-center justify-center mb-6 group-hover:scale-110 group-hover:bg-theme-primary-light transition-all duration-300">
-                        <i data-lucide="file-lock-2" class="w-10 h-10 text-theme-primary"></i>
-                    </div>
-                    <h3 class="text-xl font-bold text-theme-text mb-2">Drop Fillable PDF Here</h3>
-                    <input type="file" id="flatten-input" accept="application/pdf" class="hidden" />
-                </div>
-                <div class="mt-8 flex flex-col sm:flex-row items-center gap-4 justify-between">
-                    <button id="btn-flatten" class="hidden w-full sm:w-auto px-8 py-4 bg-gradient-to-r from-theme-primary to-theme-primaryHover text-white rounded-xl font-bold shadow-lg shadow-theme-primary/20 hover:-translate-y-0.5 transition-all">Flatten Document</button>
-                    <a id="flatten-download" class="hidden w-full sm:w-auto px-8 py-4 bg-theme-text text-theme-bg rounded-xl font-bold flex items-center justify-center gap-2 shadow-lg hover:-translate-y-0.5 transition-all"><i data-lucide="download"></i> Save PDF</a>
-                </div>
+                <div class="mb-10 text-center md:text-left"><h2 class="text-3xl md:text-4xl font-extrabold text-theme-text mb-3 tracking-tight">Flatten Form</h2><p class="text-theme-muted text-lg">Lock interactive PDF forms into read-only documents.</p></div>
+                <div id="flatten-drop-zone" class="glass-panel border-2 border-dashed border-theme-border rounded-3xl p-12 md:p-20 text-center cursor-pointer hover:border-theme-primary transition-all group shadow-sm hover:shadow-lg"><div class="w-20 h-20 mx-auto bg-theme-hover rounded-2xl flex items-center justify-center mb-6 group-hover:scale-110 group-hover:bg-theme-primary-light transition-all"><i data-lucide="file-lock-2" class="w-10 h-10 text-theme-primary"></i></div><h3 class="text-xl font-bold text-theme-text mb-2">Drop Fillable PDF Here</h3><input type="file" id="flatten-input" accept="application/pdf" class="hidden" /></div>
+                <div class="mt-8 flex flex-col sm:flex-row items-center gap-4 justify-between"><button id="btn-flatten" class="hidden w-full sm:w-auto px-8 py-4 bg-gradient-to-r from-theme-primary to-theme-primaryHover text-white rounded-xl font-bold shadow-lg shadow-theme-primary/20 hover:-translate-y-0.5 transition-all">Flatten Document</button><a id="flatten-download" class="hidden w-full sm:w-auto px-8 py-4 bg-theme-text text-theme-bg rounded-xl font-bold flex items-center justify-center gap-2 shadow-lg hover:-translate-y-0.5 transition-all"><i data-lucide="download"></i> Save PDF</a></div>
             </section>
             
-            <!-- Extract placeholder to satisfy the nav logic while saving code space -->
-            <section id="view-extract" class="hidden tool-view"><div class="mb-10"><h2 class="text-3xl md:text-4xl font-extrabold text-theme-text mb-3">Extract Pages</h2><p class="text-theme-muted text-lg">Select specific pages to save as a new PDF.</p></div><div id="extract-drop-zone" class="glass-panel border-2 border-dashed border-theme-border rounded-3xl p-12 text-center cursor-pointer hover:border-theme-primary"><h3 class="text-xl font-bold text-theme-text">Upload interface here...</h3><input type="file" id="extract-input" accept="application/pdf" class="hidden"/></div></section>
+            <section id="view-extract" class="hidden tool-view">
+                <div class="mb-10 text-center md:text-left"><h2 class="text-3xl md:text-4xl font-extrabold text-theme-text mb-3">Extract Pages</h2><p class="text-theme-muted text-lg">Select specific pages to save as a new PDF.</p></div>
+                <div id="extract-drop-zone" class="glass-panel border-2 border-dashed border-theme-border rounded-3xl p-12 text-center cursor-pointer hover:border-theme-primary"><h3 class="text-xl font-bold text-theme-text">Upload interface here...</h3><input type="file" id="extract-input" accept="application/pdf" class="hidden"/></div>
+            </section>
 
         </div>
     </main>
@@ -330,9 +255,7 @@
     <script>
         lucide.createIcons({ strokeWidth: 2 });
 
-        // ==========================================
-        // MOBILE MENU & UI LOGIC
-        // ==========================================
+        // Mobile Menu Logic
         const sidebar = document.getElementById('sidebar');
         const overlay = document.getElementById('sidebar-overlay');
         const menuBtn = document.getElementById('mobile-menu-btn');
@@ -340,23 +263,13 @@
 
         function toggleMenu() {
             menuOpen = !menuOpen;
-            if (menuOpen) {
-                sidebar.classList.remove('-translate-x-full');
-                overlay.classList.remove('hidden');
-                setTimeout(() => overlay.classList.add('opacity-100'), 10);
-            } else {
-                sidebar.classList.add('-translate-x-full');
-                overlay.classList.remove('opacity-100');
-                setTimeout(() => overlay.classList.add('hidden'), 300);
-            }
+            if (menuOpen) { sidebar.classList.remove('-translate-x-full'); overlay.classList.remove('hidden'); setTimeout(() => overlay.classList.add('opacity-100'), 10); } 
+            else { sidebar.classList.add('-translate-x-full'); overlay.classList.remove('opacity-100'); setTimeout(() => overlay.classList.add('hidden'), 300); }
         }
-
         menuBtn.addEventListener('click', toggleMenu);
         overlay.addEventListener('click', toggleMenu);
 
-        // ==========================================
-        // THEME MANAGEMENT
-        // ==========================================
+        // Theme Logic
         function setTheme(themeName) {
             document.documentElement.setAttribute('data-theme', themeName);
             localStorage.setItem('pdfzone-theme', themeName);
@@ -365,32 +278,28 @@
         }
         setTheme(localStorage.getItem('pdfzone-theme') || 'light');
 
-        // ==========================================
-        // TAB NAVIGATION
-        // ==========================================
+        // Tab Routing Logic
         function switchTab(tabId) {
-            document.querySelectorAll('.tool-view').forEach(el => {
-                el.classList.add('hidden');
-                el.classList.remove('fade-enter-active');
-            });
+            document.querySelectorAll('.tool-view').forEach(el => { el.classList.add('hidden'); el.classList.remove('fade-enter-active'); });
             document.querySelectorAll('[id^="tab-"]').forEach(el => el.classList.remove('tool-active'));
             
-            document.getElementById(`tab-${tabId}`).classList.add('tool-active');
+            // Mark sidebar link active if it exists
+            const tabBtn = document.getElementById(`tab-${tabId}`);
+            if(tabBtn) tabBtn.classList.add('tool-active');
+            
             const view = document.getElementById(`view-${tabId}`);
             view.classList.remove('hidden');
             
-            // Trigger animation
+            // Re-trigger CSS animation
             requestAnimationFrame(() => {
                 view.classList.add('fade-enter');
                 requestAnimationFrame(() => view.classList.add('fade-enter-active'));
             });
 
-            if (window.innerWidth < 768 && menuOpen) toggleMenu(); // Close mobile nav
+            if (window.innerWidth < 768 && menuOpen) toggleMenu(); 
         }
 
-        // ==========================================
-        // SHARED UPLOAD LOGIC
-        // ==========================================
+        // Shared Tool Functions
         function setupUploader(dropId, inputId, callback) {
             const drop = document.getElementById(dropId); const input = document.getElementById(inputId);
             drop.onclick = () => input.click();
@@ -414,35 +323,20 @@
             const dl = document.getElementById(dlId); dl.href = URL.createObjectURL(blob); dl.download = filename; dl.classList.remove('hidden');
         }
 
-        // --- Core PDF Logic ---
-        
-        let mergeDocs = [];
-        setupUploader('merge-drop-zone', 'merge-input', f => { 
-            Array.from(f).forEach(x => {if(x.type==='application/pdf') mergeDocs.push(x)}); 
-            document.getElementById('btn-merge').disabled = mergeDocs.length<2; 
-            document.getElementById('merge-file-list').innerHTML = mergeDocs.map(d=>`
-                <li class="p-4 glass-panel rounded-xl flex items-center gap-3">
-                    <i data-lucide="file-text" class="text-theme-primary opacity-70"></i>
-                    <span class="font-semibold">${d.name}</span>
-                </li>`).join(''); 
-            lucide.createIcons();
-        });
+        // --- Processing Logic ---
+        let mergeDocs = []; setupUploader('merge-drop-zone', 'merge-input', f => { Array.from(f).forEach(x => {if(x.type==='application/pdf') mergeDocs.push(x)}); document.getElementById('btn-merge').disabled = mergeDocs.length<2; document.getElementById('merge-file-list').innerHTML = mergeDocs.map(d=>`<li class="p-4 glass-panel rounded-xl flex items-center gap-3"><i data-lucide="file-text" class="text-theme-primary opacity-70"></i><span class="font-semibold">${d.name}</span></li>`).join(''); lucide.createIcons(); });
         document.getElementById('btn-merge').onclick = async () => { const btn = document.getElementById('btn-merge'); btn.innerText = "Processing..."; btn.disabled = true; const out = await PDFLib.PDFDocument.create(); for(const file of mergeDocs){ const p = await PDFLib.PDFDocument.load(await file.arrayBuffer()); const pages = await out.copyPages(p, p.getPageIndices()); pages.forEach(x=>out.addPage(x)); } downloadUI('merge-download', new Blob([await out.save()], {type:'application/pdf'}), 'Merged.pdf'); btn.innerText = "Merge Files"; btn.disabled = false; };
 
-        let splitPdfData = null; let splitName = "";
-        setupUploader('split-drop-zone', 'split-input', async files => { if (files[0].type !== 'application/pdf') return; splitName = files[0].name.replace('.pdf', ''); splitPdfData = await PDFLib.PDFDocument.load(await files[0].arrayBuffer()); successUI('split-drop-zone', files[0].name, 'btn-split'); });
+        let splitPdfData = null; let splitName = ""; setupUploader('split-drop-zone', 'split-input', async files => { if (files[0].type !== 'application/pdf') return; splitName = files[0].name.replace('.pdf', ''); splitPdfData = await PDFLib.PDFDocument.load(await files[0].arrayBuffer()); successUI('split-drop-zone', files[0].name, 'btn-split'); });
         document.getElementById('btn-split').onclick = async () => { document.getElementById('split-status').innerText = "Zipping pages..."; const zip = new JSZip(); const total = splitPdfData.getPageCount(); for (let i = 0; i < total; i++) { const newDoc = await PDFLib.PDFDocument.create(); const [copiedPage] = await newDoc.copyPages(splitPdfData, [i]); newDoc.addPage(copiedPage); zip.file(`${splitName}_Page_${i + 1}.pdf`, await newDoc.save()); } downloadUI('split-download', await zip.generateAsync({ type: "blob" }), `${splitName}_Split.zip`); document.getElementById('split-status').innerText = "Done!"; };
 
-        let imgFiles = [];
-        setupUploader('img2pdf-drop-zone', 'img2pdf-input', files => { Array.from(files).forEach(f => { if (f.type.startsWith('image/')) imgFiles.push(f); }); const list = document.getElementById('img2pdf-file-list'); list.innerHTML = ''; imgFiles.forEach((f, i) => list.innerHTML += `<li class="flex items-center justify-between p-4 glass-panel rounded-xl"><div class="flex items-center gap-3"><i data-lucide="image" class="text-theme-primary opacity-70"></i><span class="font-semibold">${f.name}</span></div><button onclick="imgFiles.splice(${i}, 1); this.parentElement.remove()" class="text-red-400 hover:text-red-500 transition-colors"><i data-lucide="trash-2" class="w-5 h-5"></i></button></li>`); document.getElementById('btn-img2pdf').disabled = imgFiles.length === 0; lucide.createIcons(); });
+        let imgFiles = []; setupUploader('img2pdf-drop-zone', 'img2pdf-input', files => { Array.from(files).forEach(f => { if (f.type.startsWith('image/')) imgFiles.push(f); }); const list = document.getElementById('img2pdf-file-list'); list.innerHTML = ''; imgFiles.forEach((f, i) => list.innerHTML += `<li class="flex items-center justify-between p-4 glass-panel rounded-xl"><div class="flex items-center gap-3"><i data-lucide="image" class="text-theme-primary opacity-70"></i><span class="font-semibold">${f.name}</span></div><button onclick="imgFiles.splice(${i}, 1); this.parentElement.remove()" class="text-red-400 hover:text-red-500 transition-colors"><i data-lucide="trash-2" class="w-5 h-5"></i></button></li>`); document.getElementById('btn-img2pdf').disabled = imgFiles.length === 0; lucide.createIcons(); });
         document.getElementById('btn-img2pdf').onclick = async () => { const pdfDoc = await PDFLib.PDFDocument.create(); for (const file of imgFiles) { const bytes = await file.arrayBuffer(); let img = file.type === 'image/jpeg' ? await pdfDoc.embedJpg(bytes) : await pdfDoc.embedPng(bytes); const page = pdfDoc.addPage([img.width, img.height]); page.drawImage(img, { x: 0, y: 0, width: img.width, height: img.height }); } downloadUI('img2pdf-download', new Blob([await pdfDoc.save()], { type: 'application/pdf' }), 'Images.pdf'); };
 
-        let metaDataDoc = null; let metaName = "";
-        setupUploader('metadata-drop-zone', 'metadata-input', async files => { if (files[0].type !== 'application/pdf') return; metaName = files[0].name; metaDataDoc = await PDFLib.PDFDocument.load(await files[0].arrayBuffer()); document.getElementById('meta-title').value = metaDataDoc.getTitle() || ''; document.getElementById('meta-author').value = metaDataDoc.getAuthor() || ''; document.getElementById('meta-subject').value = metaDataDoc.getSubject() || ''; document.getElementById('meta-keywords').value = metaDataDoc.getKeywords() || ''; document.getElementById('metadata-workspace').classList.remove('hidden'); successUI('metadata-drop-zone', metaName, 'btn-metadata'); });
+        let metaDataDoc = null; let metaName = ""; setupUploader('metadata-drop-zone', 'metadata-input', async files => { if (files[0].type !== 'application/pdf') return; metaName = files[0].name; metaDataDoc = await PDFLib.PDFDocument.load(await files[0].arrayBuffer()); document.getElementById('meta-title').value = metaDataDoc.getTitle() || ''; document.getElementById('meta-author').value = metaDataDoc.getAuthor() || ''; document.getElementById('meta-subject').value = metaDataDoc.getSubject() || ''; document.getElementById('meta-keywords').value = metaDataDoc.getKeywords() || ''; document.getElementById('metadata-workspace').classList.remove('hidden'); successUI('metadata-drop-zone', metaName, 'btn-metadata'); });
         document.getElementById('btn-metadata').onclick = async () => { metaDataDoc.setTitle(document.getElementById('meta-title').value); metaDataDoc.setAuthor(document.getElementById('meta-author').value); metaDataDoc.setSubject(document.getElementById('meta-subject').value); metaDataDoc.setKeywords([document.getElementById('meta-keywords').value]); downloadUI('metadata-download', new Blob([await metaDataDoc.save()], { type: 'application/pdf' }), `SEO-${metaName}`); };
         
-        let flatDoc = null; let flatName = "";
-        setupUploader('flatten-drop-zone', 'flatten-input', async files => { if (files[0].type !== 'application/pdf') return; flatName = files[0].name; flatDoc = await PDFLib.PDFDocument.load(await files[0].arrayBuffer()); successUI('flatten-drop-zone', flatName, 'btn-flatten'); });
+        let flatDoc = null; let flatName = ""; setupUploader('flatten-drop-zone', 'flatten-input', async files => { if (files[0].type !== 'application/pdf') return; flatName = files[0].name; flatDoc = await PDFLib.PDFDocument.load(await files[0].arrayBuffer()); successUI('flatten-drop-zone', flatName, 'btn-flatten'); });
         document.getElementById('btn-flatten').onclick = async () => { flatDoc.getForm().flatten(); downloadUI('flatten-download', new Blob([await flatDoc.save()], { type: 'application/pdf' }), `Locked-${flatName}`); };
     </script>
 </body>
