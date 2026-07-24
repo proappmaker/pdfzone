@@ -77,9 +77,6 @@
         ::-webkit-scrollbar { width: 6px; }
         ::-webkit-scrollbar-track { background: transparent; }
         ::-webkit-scrollbar-thumb { background: var(--border-color); border-radius: 4px; }
-        .ad-placeholder { 
-            background-image: repeating-linear-gradient(45deg, transparent, transparent 10px, var(--color-primary-light) 10px, var(--color-primary-light) 20px); 
-        }
     </style>
 
     <!-- Tailwind CSS connected to Custom CSS Variables -->
@@ -155,32 +152,20 @@
 
         <!-- Sidebar Footer & Theme Selection -->
         <div class="p-4 border-t border-theme-border space-y-4">
-            
-            <!-- AdSense Placeholder -->
-            <div class="w-full h-[200px] bg-theme-hover border border-theme-border rounded-lg ad-placeholder flex items-center justify-center text-center p-4">
-                <p class="text-xs text-theme-muted font-medium">AdSense Unit<br>(Vertical)</p>
-            </div>
-
-            <!-- Visual Theme Switcher -->
             <div class="px-1">
-                <p class="text-xs font-semibold text-theme-muted uppercase tracking-wider mb-2">Select Theme</p>
-                <div class="grid grid-cols-4 gap-2">
-                    <button onclick="setTheme('light')" class="w-10 h-10 rounded-full bg-[#f8fafc] border-2 border-[#e2e8f0] hover:scale-110 transition-transform shadow-sm" title="Light"></button>
-                    <button onclick="setTheme('dark')" class="w-10 h-10 rounded-full bg-[#0f172a] border-2 border-[#334155] hover:scale-110 transition-transform shadow-sm" title="Dark"></button>
-                    <button onclick="setTheme('midnight')" class="w-10 h-10 rounded-full bg-[#020617] border-2 border-[#0891b2] hover:scale-110 transition-transform shadow-sm" title="Midnight"></button>
-                    <button onclick="setTheme('matcha')" class="w-10 h-10 rounded-full bg-[#f7f9f6] border-2 border-[#16a34a] hover:scale-110 transition-transform shadow-sm" title="Matcha"></button>
-                </div>
+                <label for="theme-select" class="block text-xs font-semibold text-theme-muted uppercase tracking-wider mb-2">Select Theme</label>
+                <select id="theme-select" onchange="setTheme(this.value)" class="w-full bg-theme-bg border border-theme-border text-theme-text rounded-lg px-3 py-2 text-sm focus:outline-none focus:border-theme-primary transition-colors cursor-pointer">
+                    <option value="light">☀️ Light Theme</option>
+                    <option value="dark">🌙 Dark Theme</option>
+                    <option value="midnight">🌌 Midnight</option>
+                    <option value="matcha">🍵 Matcha</option>
+                </select>
             </div>
         </div>
     </aside>
 
     <!-- Main Workspace Area -->
-    <main class="flex-1 flex flex-col h-full overflow-y-auto relative p-6">
-        
-        <!-- Top AdSense Leaderboard -->
-        <div class="w-full max-w-5xl mx-auto h-[90px] mb-8 bg-theme-surface border border-theme-border rounded-lg ad-placeholder flex items-center justify-center shadow-sm">
-            <p class="text-sm text-theme-muted font-medium">AdSense Leaderboard Unit (728x90)</p>
-        </div>
+    <main class="flex-1 flex flex-col h-full overflow-y-auto relative p-8">
 
         <div id="tools-container" class="max-w-5xl mx-auto w-full">
             
@@ -252,7 +237,6 @@
                 </div>
             </section>
             
-            <!-- (Placeholders for remaining tools omitted for brevity, logic remains identical) -->
             <section id="view-extract" class="hidden tool-view"><h2 class="text-3xl font-bold text-theme-text mb-2">Extract Pages</h2><div id="extract-drop-zone" class="border-2 border-dashed border-theme-border rounded-xl p-10 text-center bg-theme-surface cursor-pointer hover:border-theme-primary"><h3 class="text-lg text-theme-text">Click or drag a file here</h3><input type="file" id="extract-input" accept="application/pdf" class="hidden"/></div><div id="extract-workspace" class="hidden mt-6 bg-theme-surface p-6 rounded-xl border border-theme-border"><div id="extract-grid" class="grid grid-cols-3 md:grid-cols-5 gap-4"></div></div><div class="mt-6 flex gap-4"><button id="btn-extract" class="px-6 py-3 bg-theme-primary text-white rounded-lg">Extract Selected</button><a id="extract-download" class="hidden px-6 py-3 bg-green-600 text-white rounded-lg">Download</a></div></section>
             <section id="view-rotate" class="hidden tool-view"><h2 class="text-3xl font-bold text-theme-text mb-2">Rotate Pages</h2><div id="rotate-drop-zone" class="border-2 border-dashed border-theme-border rounded-xl p-10 text-center bg-theme-surface cursor-pointer hover:border-theme-primary"><h3 class="text-lg text-theme-text">Click or drag a file here</h3><input type="file" id="rotate-input" accept="application/pdf" class="hidden"/></div><div id="rotate-workspace" class="hidden mt-6 bg-theme-surface p-6 rounded-xl border border-theme-border"><div id="rotate-grid" class="grid grid-cols-3 md:grid-cols-5 gap-4"></div></div><div class="mt-6 flex gap-4"><button id="btn-apply-rotation" class="px-6 py-3 bg-theme-primary text-white rounded-lg">Apply Rotation</button><a id="rotate-download" class="hidden px-6 py-3 bg-green-600 text-white rounded-lg">Download</a></div></section>
             <section id="view-watermark" class="hidden tool-view"><h2 class="text-3xl font-bold text-theme-text mb-2">Add Watermark</h2><div id="watermark-drop-zone" class="border-2 border-dashed border-theme-border rounded-xl p-10 text-center bg-theme-surface cursor-pointer hover:border-theme-primary"><h3 class="text-lg text-theme-text">Click or drag a file here</h3><input type="file" id="watermark-input" accept="application/pdf" class="hidden"/></div><div id="watermark-workspace" class="hidden mt-6"><input type="text" id="wm-text" value="CONFIDENTIAL" class="w-full bg-theme-bg border border-theme-border text-theme-text rounded p-2 mb-4"><div class="flex gap-4"><button id="btn-watermark" class="px-6 py-3 bg-theme-primary text-white rounded-lg">Apply</button><a id="watermark-download" class="hidden px-6 py-3 bg-green-600 text-white rounded-lg">Download</a></div></div></section>
@@ -265,13 +249,19 @@
         lucide.createIcons();
 
         // ==========================================
-        // THEME MANAGEMENT
+        // THEME MANAGEMENT (Updated for Select element)
         // ==========================================
         function setTheme(themeName) {
             // Apply the theme to the HTML tag
             document.documentElement.setAttribute('data-theme', themeName);
             // Save user preference
             localStorage.setItem('pdfzone-theme', themeName);
+            
+            // Sync the select dropdown in case it was called externally or on load
+            const select = document.getElementById('theme-select');
+            if(select && select.value !== themeName) {
+                select.value = themeName;
+            }
         }
 
         // Check for saved theme on load, default to light
@@ -310,8 +300,7 @@
             const dl = document.getElementById(dlId); dl.href = URL.createObjectURL(blob); dl.download = filename; dl.classList.remove('hidden');
         }
 
-        // (Tool Logic functions perfectly as in V3.0, preserved below)
-        
+        // Tool Logic
         let mergeDocs = [];
         setupUploader('merge-drop-zone', 'merge-input', f => { Array.from(f).forEach(x => {if(x.type==='application/pdf') mergeDocs.push(x)}); document.getElementById('btn-merge').disabled = mergeDocs.length<2; document.getElementById('merge-file-list').innerHTML = mergeDocs.map(d=>`<li class="p-3 bg-theme-surface border border-theme-border rounded-lg">${d.name}</li>`).join(''); });
         document.getElementById('btn-merge').onclick = async () => { const out = await PDFLib.PDFDocument.create(); for(const file of mergeDocs){ const p = await PDFLib.PDFDocument.load(await file.arrayBuffer()); const pages = await out.copyPages(p, p.getPageIndices()); pages.forEach(x=>out.addPage(x)); } downloadUI('merge-download', new Blob([await out.save()], {type:'application/pdf'}), 'Merged.pdf'); };
